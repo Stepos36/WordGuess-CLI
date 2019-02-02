@@ -1,5 +1,6 @@
 var Letter = require('./letter.js');
 var Word = function(word) {
+    this.attempts = 8
     this.letterArr = [];
     this.wordLettersArr = word.split('');
     for (i=0;i<this.wordLettersArr.length;i++){
@@ -7,24 +8,29 @@ var Word = function(word) {
         this.letterArr.push(newLetter)
     }
     this.returnWord = function() {
-        var string;
+        var string='';
         for(j=0;j<this.letterArr.length;j++){
-            string += this.letterArr[j].checkLetter();
+            string += this.letterArr[j].response();
         }
         return string
     }
     this.guess = function(userGuess){
         var status = false
         for(k=0;k<this.letterArr.length;k++){
-            if(this.letterArr[k].guessed=false){
-                this.letterArr[k].guess(userGuess);
-                if(this.letterArr[k].guessed=true){
+            if(!this.letterArr[k].guessed){
+                this.letterArr[k].checkLetter(userGuess);
+                if(this.letterArr[k].guessed){
                     status = true;
                 }
             }
         }
+        if(status){
+            console.log('Correct guess!'+'\n')
+        }
+        else{
+            console.log('Wrong!'+'\n')
+            this.attempts--
+        }
     }
 }
-var firstWord = new Word('hello')
-console.log(firstWord)
 module.exports = Word

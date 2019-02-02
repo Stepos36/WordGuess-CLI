@@ -1,5 +1,5 @@
 var Letter = function(letter) {
-    this.char = letter;
+    this.char = letter.toLowerCase();
     this.guessed = false
     this.response = function() {
         if (this.guessed) {
@@ -9,8 +9,8 @@ var Letter = function(letter) {
             return '_';
         }
     }
-    this.checkLetter = function(){
-        if (userGuess.toLowerCase()===this.char){
+    this.checkLetter = function(userGuess){
+        if (userGuess.toLowerCase()==this.char){
             this.guessed = true
         }
     }

@@ -15,4 +15,4 @@ var Letter = function(letter) {
         }
     }
 }
-module.exports Letter
+module.exports = Letter

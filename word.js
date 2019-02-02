@@ -25,10 +25,10 @@ var Word = function(word) {
             }
         }
         if(status){
-            console.log('Correct guess!'+'\n')
+            console.log('\n'+'Correct guess! Keep going'.green)
         }
         else{
-            console.log('Wrong!'+'\n')
+            console.log('\n'+'Wrong! Try something else'.red)
             this.attempts--
         }
     }

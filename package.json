@@ -4,6 +4,7 @@
   "description": "Word-Guess command line interface game based on JavaScript constructors",
   "main": "game.js",
   "dependencies": {
+    "colors": "^1.3.3",
     "inquirer": "^6.2.2"
   },
   "devDependencies": {},

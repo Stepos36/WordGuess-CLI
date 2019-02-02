@@ -1,5 +1,6 @@
 var Word = require('./word.js');
 var inquirer = require('inquirer');
+var colors = require('colors');
 var wordBank = ['Hello', 'Goodbye'];
 var randNum;
 var unknownWord;
@@ -12,9 +13,11 @@ var pickWord = function(){
     startGame()
 }
 function startGame() {
+    var comparsionWord = unknownWordLetters.returnWord().replace(/ /g, '')
     if((unknownWordLetters.returnWord()!=unknownWord.toLowerCase())&&(unknownWordLetters.attempts>0)) {
-        console.log(unknownWordLetters.returnWord()+'\n'
-        +'You have '+unknownWordLetters.attempts+' attempts left');
+        console.log('========================================='.rainbow+'\n'
+        +unknownWordLetters.returnWord()+'\n'+'========================================='.rainbow+'\n'
+        +'You have '+unknownWordLetters.attempts+' attempts left'+'\n');
         inquirer.prompt([
             {
                 name: 'letter',
@@ -22,10 +25,6 @@ function startGame() {
             }
         ]).then(function(response){
             unknownWordLetters.guess(response.letter);
-            console.log(response.letter)
-            console.log(unknownWordLetters.returnWord())
-            console.log(unknownWord.toLowerCase())
-            console.log(unknownWordLetters)
             startGame()
         });
     }
@@ -35,10 +34,10 @@ function startGame() {
 }
 function endGame() {
     if(unknownWordLetters.attempts>0){
-        console.log('You won!');
+        console.log('You won!'+'\n');
     }
     else{
-        console.log('You lost! Correct answer was: '+unknownWord)
+        console.log('You lost! Correct answer was: '+unknownWord+'\n')
     }
     pickWord()
 }

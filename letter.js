@@ -3,10 +3,10 @@ var Letter = function(letter) {
     this.guessed = false
     this.response = function() {
         if (this.guessed) {
-            return this.char;
+            return (this.char+' ');
         }
         else {
-            return '_';
+            return ('_'+' ');
         }
     }
     this.checkLetter = function(userGuess){

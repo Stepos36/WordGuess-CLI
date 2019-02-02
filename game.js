@@ -14,7 +14,7 @@ var pickWord = function(){
 }
 function startGame() {
     var comparsionWord = unknownWordLetters.returnWord().replace(/ /g, '')
-    if((unknownWordLetters.returnWord()!=unknownWord.toLowerCase())&&(unknownWordLetters.attempts>0)) {
+    if((comparsionWord!=unknownWord.toLowerCase())&&(unknownWordLetters.attempts>0)) {
         console.log('========================================='.rainbow+'\n'
         +unknownWordLetters.returnWord()+'\n'+'========================================='.rainbow+'\n'
         +'You have '+unknownWordLetters.attempts+' attempts left'+'\n');
@@ -34,7 +34,7 @@ function startGame() {
 }
 function endGame() {
     if(unknownWordLetters.attempts>0){
-        console.log('You won!'+'\n');
+        console.log('\n'+'Congratulations! You won!'.bgCyan+'\n');
     }
     else{
         console.log('You lost! Correct answer was: '+unknownWord+'\n')

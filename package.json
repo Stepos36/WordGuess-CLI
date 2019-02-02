@@ -1,0 +1,24 @@
+{
+  "name": "WordGuess-CLI",
+  "version": "1.0.0",
+  "description": "Word-Guess command line interface game based on JavaScript constructors",
+  "main": "game.js",
+  "dependencies": {
+    "inquirer": "^6.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stepos36/WordGuess-CLI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stepos36/WordGuess-CLI/issues"
+  },
+  "homepage": "https://github.com/Stepos36/WordGuess-CLI#readme"
+}

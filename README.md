@@ -14,7 +14,7 @@ Type 'node game.js' in your command line to begin the game.
 
 Every time you guess a letter, type it in and press Enter to check if your guess is right
 
-##Typical gameflow:
+## Typical gameflow:
 
 * Each round user is given 8 wrong guesses before he loses. If user runs out of attempts, he gets a message about his loss and the right word in the CLI.
 ![Loss](assets/readme/loss.gif)
